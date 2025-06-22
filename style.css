@@ -1,10 +1,9 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-.box
-{
+.box {
     height: 300px;
     width: 300px;
     background: rgb(0, 0, 0);
@@ -14,22 +13,89 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 10%;
+    flex-direction: column;
+    padding: 15px;
+    box-sizing: border-box;
+    position: relative;
 }
 
-.note
-{
+.note {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 18px;
+    color: white;
 }
 
-.all_notes
-{
+.all_notes {
     display: grid;
     grid-template-columns: repeat(4, 300px);
     gap: 10px;
     padding: 10px;
 }
 
+.box.add {
+    cursor: pointer;
+    font-size: 50px;
+    color: #aaa;
+    user-select: none;
+    gap: 10px;
+}
+
+.box.add p:last-child {
+    font-size: 20px;
+    color: #888;
+}
+
+.note-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.note-desc {
+    flex-grow: 1;
+    font-size: 16px;
+    color: #ddd;
+    margin-bottom: 15px;
+    overflow-y: auto;
+}
+
+.data {
+    font-size: 12px;
+    color: #666;
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+}
+
+.note-buttons {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+.note-buttons button {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.note-buttons button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Модалка */
 .modal {
     display: none;
     position: fixed;
@@ -40,6 +106,7 @@
     background: rgba(0,0,0,0.6);
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 }
 
 .modal-content {
@@ -52,7 +119,54 @@
     gap: 10px;
 }
 
-.modal-content input, .modal-content textarea {
-    padding: 5px;
+.modal-content h2 {
+    margin-bottom: 10px;
+}
+
+.modal-content input,
+.modal-content textarea {
+    padding: 8px;
     font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: vertical;
+}
+
+.modal-content button {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+#saveNote {
+    background-color: #007BFF;
+    color: white;
+}
+
+#closeModal {
+    background-color: #ccc;
+    margin-left: 10px;
+}
+.note-desc {
+ 
+
+    margin-bottom: 15px;
+    overflow-y: auto;          /* вертикальна прокрутка, якщо треба */
+    white-space: pre-wrap;     /* перенос рядків і збереження пробілів */
+    word-wrap: break-word;     /* перенос довгих слів */
+    max-height: 180px;         /* максимальна висота блоку */
+    width: 100%;               /* займати всю ширину контейнера */
+}
+
+.note-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #fff;
+    white-space: normal;       /* дозволяє перенос рядків */
+    overflow-wrap: break-word; /* перенос довгих слів */
+    word-wrap: break-word;     /* для сумісності */
+   max-width: calc(100% - 90px); /* залишаємо 70px для кнопок праворуч */
 }

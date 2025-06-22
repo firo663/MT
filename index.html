@@ -8,46 +8,46 @@
     <script defer src="script.js"></script>
 </head>
 <body>
-    <div class="all_notes">
-        <div class="box add">
-            <p>+</p>
-            <p>add note</p>
-        </div>
+    <!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Нотатки з редагуванням та видаленням</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-        <div class="modal" id="noteModal">
-        <div class="modal-content">
-            <h2>Нова нотатка</h2>
-            <input type="text" id="noteTitle" placeholder="Заголовок">
-            <textarea id="noteDesc" placeholder="Опис"></textarea>
-            <button id="saveNote">Зберегти</button>
-            <button id="closeModal">Закрити</button>
-        </div>
-    </div>
+<div class="all_notes">
+  <div class="box add" id="addNoteBtn">
+    <p>+</p>
+    <p>add note</p>
+  </div>
 </div>
 
-        <!-- <div class="box note">
-            <h1>title</h1>
-            <p>description</p>
-            <p class="data">data</p>
-        </div>
+<!-- Модалка -->
+<div class="modal" id="noteModal">
+  <div class="modal-content">
+    <h2>Нова нотатка</h2>
+    <input type="text" id="noteTitle" placeholder="Заголовок" />
+    <textarea id="noteDesc" rows="5" placeholder="Опис"></textarea>
+    <button id="saveNote">Зберегти</button>
+    <button id="closeModal">Закрити</button>
+  </div>
+</div>
 
-        <div class="box note">
-            <h1>title</h1>
-            <p>description</p>
-            <p class="data">data</p>
-        </div>
-
-        <div class="box note">
-            <h1>title</h1>
-            <p>description</p>
-            <p class="data">data</p>
-        </div>
-
-        <div class="box note">
-            <h1>title</h1>
-            <p>description</p>
-            <p class="data">data</p>
-        </div> -->
+<!-- Шаблон нотатки (прихований) -->
+<div id="noteTemplate" style="display:none;">
+  <div class="box note">
+    <h1 class="note-title"></h1>
+    <p class="note-desc"></p>
+    <p class="data"></p>
+    <div class="note-buttons">
+      <button class="edit-note" title="Редагувати">✏️</button>
+      <button class="delete-note" title="Видалити">🗑️</button>
+    </div>
+  </div>
+</div>
     </div>
     
 </body>
